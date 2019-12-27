@@ -1,5 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
-const App = () => <h1>Hello world from React!</h1>;
+import store from '../store';
+
+import Counter from './Counter';
+
+const App = () => (
+  <Provider store={store}>
+    <Counter />
+  </Provider>
+)
 
 export default App;
