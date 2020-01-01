@@ -1,14 +1,19 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React, { useState } from 'react';
 
-import store from '../store';
+const App = () => {
+  const [value, setValue] = useState('');
+  const handleChange = e => setValue(e.target.value);
 
-import Counter from './Counter';
-
-const App = () => (
-  <Provider store={store}>
-    <Counter />
-  </Provider>
-)
+  return (
+    <>
+      {/* Controlled: */}
+      <label>controlado</label>
+      <input value={value} onChange={handleChange} />
+      {/* Uncontrolled */}
+      <label>não controlado</label>
+      <input type="text" />
+    </>
+  );
+};
 
 export default App;
